@@ -1,0 +1,222 @@
+/* Progress Indicators */
+
+/* Main Progress Bar */
+.progress-container {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.progress-bar {
+    background: var(--gray-200);
+    border-radius: 50px;
+    height: 12px;
+    overflow: hidden;
+    margin-bottom: 20px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.progress-fill {
+    background: linear-gradient(90deg, var(--primary) 0%, var(--color-accent) 100%);
+    height: 100%;
+    border-radius: 50px;
+    transition: width 1s ease;
+    width: 0%;
+}
+
+.progress-text {
+    color: var(--gray-700);
+    font-size: 1.1rem;
+    font-weight: 500;
+    margin-bottom: 8px;
+}
+
+.progress-time {
+    color: var(--gray-500);
+    font-size: 0.9rem;
+}
+
+/* Small Progress Bar for Popup */
+.progress-bar-small {
+    background: var(--gray-200);
+    border-radius: 50px;
+    height: 6px;
+    overflow: hidden;
+    margin-bottom: 8px;
+}
+
+.progress-fill-small {
+    background: linear-gradient(90deg, var(--primary) 0%, var(--color-accent) 100%);
+    height: 100%;
+    border-radius: 50px;
+    transition: width 1s ease;
+    width: 0%;
+}
+
+/* Processing Stages */
+.processing-stages {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 15px;
+    margin-bottom: 40px;
+}
+
+.processing-stage {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 20px;
+    background: var(--gray-50);
+    border-radius: var(--radius);
+    border-left: 4px solid var(--gray-300);
+    transition: all 0.3s ease;
+}
+
+.processing-stage.active {
+    border-left-color: var(--primary);
+    background: var(--white);
+    box-shadow: var(--shadow);
+}
+
+.processing-stage.completed {
+    border-left-color: var(--success);
+    background: var(--white);
+}
+
+.stage-icon {
+    width: 40px;
+    height: 40px;
+    background: var(--gray-300);
+    color: var(--white);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+    flex-shrink: 0;
+}
+
+.processing-stage.active .stage-icon {
+    background: var(--primary);
+    animation: pulse 2s infinite;
+}
+
+.processing-stage.completed .stage-icon {
+    background: var(--success);
+}
+
+.stage-info {
+    flex: 1;
+}
+
+.stage-info h4 {
+    color: var(--gray-700);
+    font-size: 1rem;
+    margin-bottom: 4px;
+}
+
+.stage-info p {
+    color: var(--gray-500);
+    font-size: 0.9rem;
+}
+
+.stage-status {
+    color: var(--gray-400);
+    font-size: 1.2rem;
+}
+
+.processing-stage.active .stage-status {
+    color: var(--primary);
+    animation: spin 2s linear infinite;
+}
+
+.processing-stage.completed .stage-status {
+    color: var(--success);
+}
+
+/* Translation Stages */
+.translation-stages {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 15px;
+    margin-bottom: 40px;
+}
+
+.translation-stage {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 20px;
+    background: var(--gray-50);
+    border-radius: var(--radius);
+    border-left: 4px solid var(--gray-300);
+    transition: all 0.3s ease;
+}
+
+.translation-stage.active {
+    border-left-color: var(--primary);
+    background: var(--white);
+    box-shadow: var(--shadow);
+}
+
+.translation-stage.completed {
+    border-left-color: var(--success);
+    background: var(--white);
+}
+
+/* Completion Messages */
+.completion-message {
+    display: none;
+    text-align: center;
+    padding: 40px;
+    background: var(--gray-50);
+    border-radius: var(--radius-lg);
+    border: 2px solid var(--success);
+}
+
+.completion-message.show {
+    display: block;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+.completion-icon {
+    font-size: 4rem;
+    color: var(--success);
+    margin-bottom: 20px;
+}
+
+.completion-message h3 {
+    color: var(--gray-700);
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.completion-message p {
+    color: var(--gray-500);
+    margin-bottom: 30px;
+}
+
+.translation-completion-message {
+    display: none;
+    text-align: center;
+    padding: 40px;
+    background: var(--gray-50);
+    border-radius: var(--radius-lg);
+    border: 2px solid var(--success);
+}
+
+.translation-completion-message.show {
+    display: block;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+/* Spin Animation for Loading Icons */
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}

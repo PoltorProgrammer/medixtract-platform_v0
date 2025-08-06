@@ -1,0 +1,65 @@
+/* Authentication Stage */
+
+.auth-container {
+    display: flex;
+    background: var(--white);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-lg);
+    overflow: hidden;
+    max-width: 1000px;
+    margin: 0 auto;
+    min-height: 500px;
+}
+
+.auth-left {
+    flex: 1;
+    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+    color: var(--white);
+    padding: 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.auth-left h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: var(--white);
+}
+
+.auth-left p {
+    font-size: 1.1rem;
+    opacity: 0.9;
+    margin-bottom: 30px;
+}
+
+.feature-list {
+    list-style: none;
+}
+
+.feature-list li {
+    margin: 12px 0;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.feature-list i {
+    color: var(--color-light);
+    width: 20px;
+}
+
+.auth-right {
+    flex: 1;
+    padding: 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.auth-form h3 {
+    color: var(--gray-700);
+    font-size: 1.8rem;
+    margin-bottom: 30px;
+    text-align: center;
+}

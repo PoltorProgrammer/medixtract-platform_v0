@@ -1,0 +1,109 @@
+/* Table Components */
+
+.patient-records-table {
+    background: var(--white);
+    border-radius: var(--radius);
+    overflow: hidden;
+    border: 1px solid var(--gray-200);
+}
+
+.table-header {
+    display: grid;
+    grid-template-columns: 1.2fr 2fr 1.3fr 1.4fr 0.8fr 1.8fr;
+    background: var(--gray-100);
+    border-bottom: 2px solid var(--gray-200);
+    gap: 1px;
+    width: 100%;
+}
+
+.header-cell {
+    padding: 16px 15px;
+    font-weight: 600;
+    color: var(--gray-700);
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    background: var(--gray-100);
+    display: flex;
+    align-items: center;
+}
+
+.header-patient-id {
+    background: var(--primary);
+    color: var(--white);
+}
+
+.table-body {
+    max-height: 600px;
+    overflow-y: auto;
+    border: 1px solid var(--gray-200);
+    border-top: none;
+    width: 100%;
+}
+
+.table-row {
+    display: grid;
+    grid-template-columns: 1.2fr 2fr 1.3fr 1.4fr 0.8fr 1.8fr;
+    border-bottom: 1px solid var(--gray-200);
+    transition: all 0.3s ease;
+    gap: 1px;
+    background: var(--gray-50);
+    width: 100%;
+}
+
+.table-row:hover {
+    background: var(--white);
+    box-shadow: inset 0 0 0 1px var(--primary);
+}
+
+.table-cell {
+    padding: 16px 15px;
+    font-size: 0.9rem;
+    color: var(--gray-700);
+    display: flex;
+    align-items: center;
+    background: var(--white);
+    line-height: 1.4;
+    min-width: 0; /* Allows text truncation if needed */
+}
+
+.patient-id-cell {
+    font-weight: 600;
+    color: var(--primary);
+}
+
+/* Status Badges */
+.status-badge {
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.status-processing {
+    background: var(--warning);
+    color: var(--white);
+}
+
+.status-review {
+    background: var(--primary);
+    color: var(--white);
+}
+
+.status-completed {
+    background: var(--success);
+    color: var(--white);
+}
+
+.status-delivered {
+    background: var(--gray-600);
+    color: var(--white);
+}
+
+/* Action Buttons in Tables */
+.action-buttons {
+    display: flex;
+    gap: 8px;
+}

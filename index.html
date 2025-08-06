@@ -1,0 +1,869 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MediXtract - Clinical Data Extraction Platform</title>
+    <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/MediXTract/MediXtract/refs/heads/main/images/LOGO_MediXtract_Circular.png">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Main Content Area -->
+        <div class="main-content">
+            <!-- Stage 1: Authentication -->
+            <div class="stage-content active" id="stage-1">
+                <div class="stage-header">
+                    <h1><i class="fas fa-stethoscope"></i> MediXtract</h1>
+                    <p>AI-Powered Clinical Data Extraction Platform</p>
+                </div>
+
+                <div class="auth-container">
+                    <div class="auth-left">
+                        <h2>Clinical Access Portal</h2>
+                        <p>Secure authentication with institutional SSO integration and role-based access controls.</p>
+                        <ul class="feature-list">
+                            <li><i class="fas fa-shield-alt"></i> Enterprise Security Standards</li>
+                            <li><i class="fas fa-users"></i> Multi-Role Access Management</li>
+                            <li><i class="fas fa-key"></i> Single Sign-On Integration</li>
+                            <li><i class="fas fa-history"></i> Complete Audit Trail</li>
+                        </ul>
+                    </div>
+                    <div class="auth-right">
+                        <form class="auth-form" id="loginForm">
+                            <h3>Sign In to MediXtract</h3>
+                            <div class="form-group">
+                                <label for="email">Email Address</label>
+                                <input type="email" id="email" placeholder="physician@hospital.com" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="password">Password</label>
+                                <input type="password" id="password" placeholder="Enter your password" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="role">Role</label>
+                                <select id="role" required>
+                                    <option value="">Select your role</option>
+                                    <option value="physician">Attending Physician</option>
+                                    <option value="resident">Resident</option>
+                                    <option value="analyst">Data Analyst</option>
+                                    <option value="coordinator">Research Coordinator</option>
+                                </select>
+                            </div>
+                            <button type="submit" class="primary-btn">
+                                <i class="fas fa-sign-in-alt"></i> Sign In
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Stage 2: User Portal -->
+            <div class="stage-content" id="stage-2">
+                <div class="stage-header">
+                    <h2>User Portal</h2>
+                    <p>Welcome to your clinical data extraction workspace</p>
+                </div>
+
+                <div class="portal-container">
+                    <!-- User Welcome Section -->
+                    <div class="welcome-section">
+                        <div class="welcome-card">
+                            <div class="welcome-content">
+                                <div class="user-info">
+                                    <div class="user-avatar">
+                                        <i class="fas fa-user-md"></i>
+                                    </div>
+                                    <div class="user-details">
+                                        <h3>Welcome back, <span id="userName">Dr. Smith</span></h3>
+                                        <p class="user-role" id="userRole">Attending Physician</p>
+                                        <p class="last-login">Last login: Today at 2:30 PM</p>
+                                    </div>
+                                </div>
+                                
+                                    <div class="quick-stats">
+                                        <div class="stat-item">
+                                            <span class="stat-number" id="ongoingPatients">3</span>
+                                            <span class="stat-label">Ongoing Cases</span>
+                                        </div>
+                                        <div class="stat-item">
+                                            <span class="stat-number" id="completedPatients">21</span>
+                                            <span class="stat-label">Completed Cases</span>
+                                        </div>
+                                        <div class="stat-item">
+                                            <span class="stat-number" id="totalFieldsProcessed">156</span>
+                                            <span class="stat-label">Fields Extracted</span>
+                                        </div>
+                                    </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Main Actions Section -->
+                    <div class="actions-section">
+                        <div class="main-actions">
+                            <div class="action-card primary-action" id="newPatientCard">
+                                <div class="action-icon">
+                                    <i class="fas fa-plus-circle"></i>
+                                </div>
+                                <div class="action-content">
+                                    <h3>Introduce New Patient</h3>
+                                    <p>Upload and process medical documents for a new patient case</p>
+                                    <div class="action-features">
+                                        <span><i class="fas fa-check"></i> Multi-format document support</span>
+                                        <span><i class="fas fa-check"></i> AI-powered data extraction</span>
+                                        <span><i class="fas fa-check"></i> Quality validation workflow</span>
+                                    </div>
+                                </div>
+                                <button class="action-btn">
+                                    <i class="fas fa-arrow-right"></i> Start New Case
+                                </button>
+                            </div>
+
+                            <div class="action-card secondary-action" id="viewPatientsCard">
+                                <div class="action-icon">
+                                    <i class="fas fa-list-alt"></i>
+                                </div>
+                                <div class="action-content">
+                                    <h3>View Patient Database</h3>
+                                    <p>Review and manage previously processed patient data</p>
+                                    <div class="action-features">
+                                        <span><i class="fas fa-check"></i> Search and filter patients</span>
+                                        <span><i class="fas fa-check"></i> Edit and validate data</span>
+                                        <span><i class="fas fa-check"></i> Export patient records</span>
+                                    </div>
+                                </div>
+                                <button class="action-btn">
+                                    <i class="fas fa-arrow-right"></i> View Database
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Secondary Actions -->
+                        <div class="secondary-actions">
+                            <div class="secondary-action-item">
+                                <i class="fas fa-cog"></i>
+                                <span>System Settings</span>
+                            </div>
+                            <div class="secondary-action-item">
+                                <i class="fas fa-download"></i>
+                                <span>Export Reports</span>
+                            </div>
+                            <div class="secondary-action-item">
+                                <i class="fas fa-question-circle"></i>
+                                <span>Help & Support</span>
+                            </div>
+                            <div class="secondary-action-item">
+                                <i class="fas fa-sign-out-alt"></i>
+                                <span>Sign Out</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Recent Activity Section -->
+                    <div class="activity-section">
+                        <div class="activity-card">
+                            <h3><i class="fas fa-clock"></i> Recent Activity</h3>
+                            <div class="activity-list">
+                                <div class="activity-item">
+                                    <div class="activity-icon completed">
+                                        <i class="fas fa-check"></i>
+                                    </div>
+                                    <div class="activity-content">
+                                        <h4>Patient NEC-2024-023 - Processing Complete</h4>
+                                        <p>All 34 fields extracted with 97.8% confidence • 15 minutes ago</p>
+                                    </div>
+                                </div>
+                                <div class="activity-item">
+                                    <div class="activity-icon pending">
+                                        <i class="fas fa-clock"></i>
+                                    </div>
+                                    <div class="activity-content">
+                                        <h4>Patient NEC-2024-022 - Validation Pending</h4>
+                                        <p>Manual review required for 3 fields • 2 hours ago</p>
+                                    </div>
+                                </div>
+                                <div class="activity-item">
+                                    <div class="activity-icon completed">
+                                        <i class="fas fa-check"></i>
+                                    </div>
+                                    <div class="activity-content">
+                                        <h4>Patient NEC-2024-021 - Data Delivered</h4>
+                                        <p>Successfully delivered to research database • Yesterday</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Stage 3: Patient Database -->
+            <div class="stage-content" id="stage-3">
+                <div class="stage-header">
+                    <h2>Patient Database</h2>
+                    <p>Search, filter, and manage patient data processing records</p>
+                </div>
+
+                <div class="database-container">
+                    <!-- Database Controls -->
+                    <div class="database-controls">
+                        <div class="controls-left">
+                            <button class="btn-back-to-portal" id="backToPortalBtn">
+                                <i class="fas fa-arrow-left"></i> Back to Portal
+                            </button>
+                        </div>
+                        
+                        <div class="controls-center">
+                            <div class="search-filters">
+                                <div class="filter-group">
+                                    <label for="patientIdFilter">Patient ID</label>
+                                    <input type="text" id="patientIdFilter" placeholder="Search by Patient ID..." class="filter-input">
+                                </div>
+                                <div class="filter-group">
+                                    <label for="hospitalFilter">Hospital</label>
+                                    <select id="hospitalFilter" class="filter-select">
+                                        <option value="">All Hospitals</option>
+                                        <option value="general">General Hospital</option>
+                                        <option value="children">Children's Hospital</option>
+                                        <option value="medical">Medical Center</option>
+                                        <option value="university">University Hospital</option>
+                                    </select>
+                                </div>
+                                <div class="filter-group">
+                                    <label for="statusFilter">Processing Status</label>
+                                    <select id="statusFilter" class="filter-select">
+                                        <option value="">All Statuses</option>
+                                        <option value="processing">Processing</option>
+                                        <option value="review">Under Review</option>
+                                        <option value="completed">Completed</option>
+                                        <option value="delivered">Delivered</option>
+                                    </select>
+                                </div>
+                                <button class="btn-clear-filters" id="clearFiltersBtn">
+                                    <i class="fas fa-times"></i> Clear Filters
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div class="controls-right">
+                            <button class="btn-refresh" id="refreshDatabaseBtn">
+                                <i class="fas fa-sync-alt"></i> Refresh
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Database Results -->
+                    <div class="database-results">
+                        <div class="results-header">
+                            <h3>Patient Records <span class="results-count" id="resultsCount">(24 found)</span></h3>
+                            <div class="sort-controls">
+                                <label for="sortBy">Sort by:</label>
+                                <select id="sortBy" class="sort-select">
+                                    <option value="date">Date Added</option>
+                                    <option value="patient-id">Patient ID</option>
+                                    <option value="status">Status</option>
+                                    <option value="hospital">Hospital</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="patient-records-table">
+                            <div class="table-header">
+                                <div class="header-cell header-patient-id">Patient ID</div>
+                                <div class="header-cell header-hospital">Hospital</div>
+                                <div class="header-cell header-date">Date Added</div>
+                                <div class="header-cell header-status">Status</div>
+                                <div class="header-cell header-fields">Fields</div>
+                                <div class="header-cell header-actions">Actions</div>
+                            </div>
+                            <div class="table-body" id="patientRecordsBody">
+                                <!-- Patient records will be populated here -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Stage 4: Document Management -->
+            <div class="stage-content" id="stage-4">
+                <div class="stage-header">
+                    <h2>Patient Data Management Portal</h2>
+                    <p>Upload medical documents for a new patient</p>
+                </div>
+
+                <div class="portal-container">
+                    <!-- Back to Portal Navigation -->
+                    <div class="back-navigation">
+                        <button class="btn-back-to-portal" id="backToPortalFromDoc">
+                            <i class="fas fa-arrow-left"></i> Back to User Portal
+                        </button>
+                    </div>
+
+                    <!-- New Patient Section -->
+                    <div class="new-patient-section">
+                        <div class="section-card">
+                            <div class="upload-section">
+                                <div class="folder-selection" id="folderSelection">
+                                    <div class="folder-picker-zone" id="folderPickerZone">
+                                        <i class="fas fa-folder-open"></i>
+                                        <h4>Select Patient Document Folder</h4>
+                                        <p>Choose a folder containing medical documents and JSON schema</p>
+                                        <button class="primary-btn" id="selectFolderBtn">
+                                            <i class="fas fa-folder"></i> Browse for Folder
+                                        </button>
+                                        <input type="file" id="folderInput" webkitdirectory multiple style="display: none;">
+                                    </div>
+                                    
+                                    <div class="folder-requirements">
+                                        <h4><i class="fas fa-info-circle"></i> Folder Requirements</h4>
+                                        <ul>
+                                            <li><strong>Medical Documents:</strong> PDF, DOC, DOCX, TXT files</li>
+                                            <li><strong>JSON Schema:</strong> One .json file containing field definitions</li>
+                                            <li><strong>Supported formats:</strong> Clinical notes, lab results, surgical reports</li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                                <div class="folder-analysis" id="folderAnalysis" style="display: none;">
+                                    <div class="analysis-header">
+                                        <h3><i class="fas fa-check-circle"></i> Folder Analysis Complete</h3>
+                                        <p id="folderPath">Analyzing folder contents...</p>
+                                    </div>
+                                    
+                                    <div class="folder-contents">
+                                        <div class="content-section">
+                                            <h4><i class="fas fa-file-medical"></i> Medical Documents Found</h4>
+                                            <div class="medical-files" id="medicalFiles">
+                                                <!-- Medical documents will be listed here -->
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="content-section">
+                                            <h4><i class="fas fa-file-code"></i> Schema File</h4>
+                                            <div class="schema-file" id="schemaFile">
+                                                <!-- JSON schema info will be shown here -->
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="processing-summary-box">
+                                        <h4>Processing Summary</h4>
+                                        <div class="summary-stats">
+                                            <div class="stat-item">
+                                                <span class="stat-number" id="totalDocsCount">0</span>
+                                                <span class="stat-label">Medical Documents</span>
+                                            </div>
+                                            <div class="stat-item">
+                                                <span class="stat-number" id="totalFieldsCount">0</span>
+                                                <span class="stat-label">Data Fields</span>
+                                            </div>
+                                            <div class="stat-item">
+                                                <span class="stat-number" id="estimatedTime">0</span>
+                                                <span class="stat-label">Est. Time (min)</span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="action-section">
+                                        <button class="primary-btn" id="startTranslationBtn">
+                                            <i class="fas fa-language"></i> Begin Document Translation
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Stage 5: Translation Review -->
+            <div class="stage-content" id="stage-5">
+                <!-- Translation Progress Header -->
+                <div class="translation-progress-header" id="translationProgressHeader" style="display: none;">
+                    <div class="stage-header">
+                        <h2><i class="fas fa-language fa-spin"></i> Document Translation in Progress</h2>
+                        <p id="translationPatient">Translating medical documents to English</p>
+                    </div>
+
+                    <div class="translation-progress-section">
+                        <div class="progress-container">
+                            <div class="progress-bar">
+                                <div class="progress-fill" id="translationProgressFill"></div>
+                            </div>
+                            <div class="progress-text" id="translationProgressText">Initializing translation service...</div>
+                            <div class="progress-time" id="translationProgressTime">Estimated time: Calculating...</div>
+                        </div>
+
+                        <div class="translation-stages" id="translationStages">
+                            <div class="translation-stage" data-stage="analysis">
+                                <div class="stage-icon"><i class="fas fa-search"></i></div>
+                                <div class="stage-info">
+                                    <h4>Document Analysis</h4>
+                                    <p>Analyzing document language and structure</p>
+                                </div>
+                                <div class="stage-status"><i class="fas fa-clock"></i></div>
+                            </div>
+                            
+                            <div class="translation-stage" data-stage="translation">
+                                <div class="stage-icon"><i class="fas fa-language"></i></div>
+                                <div class="stage-info">
+                                    <h4>AI Translation</h4>
+                                    <p>Converting documents to English with medical context</p>
+                                </div>
+                                <div class="stage-status"><i class="fas fa-clock"></i></div>
+                            </div>
+                            
+                            <div class="translation-stage" data-stage="formatting">
+                                <div class="stage-icon"><i class="fas fa-file-alt"></i></div>
+                                <div class="stage-info">
+                                    <h4>Format Preservation</h4>
+                                    <p>Maintaining original document layout and structure</p>
+                                </div>
+                                <div class="stage-status"><i class="fas fa-clock"></i></div>
+                            </div>
+                            
+                            <div class="translation-stage" data-stage="validation">
+                                <div class="stage-icon"><i class="fas fa-check-double"></i></div>
+                                <div class="stage-info">
+                                    <h4>Quality Validation</h4>
+                                    <p>Verifying translation accuracy and completeness</p>
+                                </div>
+                                <div class="stage-status"><i class="fas fa-clock"></i></div>
+                            </div>
+                        </div>
+
+                        <div class="translation-completion-message" id="translationCompletionMessage">
+                            <div class="completion-icon">
+                                <i class="fas fa-check-circle"></i>
+                            </div>
+                            <h3>Translation Complete!</h3>
+                            <p>All documents have been successfully translated to English.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Translation Review Dashboard -->
+                <div class="translation-review-dashboard" id="translationReviewDashboard">
+                    <div class="stage-header">
+                        <div class="header-content">
+                            <div class="header-text">
+                                <h2>Translation Review</h2>
+                                <p>Review original and translated documents side by side</p>
+                            </div>
+                            <button class="btn-back-portal" id="backToDocumentsBtn">
+                                <i class="fas fa-arrow-left"></i> Back to Documents
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="translation-container">
+                        <!-- Document Navigation -->
+                        <div class="document-navigation">
+                            <div class="translation-summary">
+                                <h4>Translation Summary</h4>
+                                <div class="summary-grid translation-summary-grid">
+                                    <div class="summary-item">
+                                        <span>Total:</span>
+                                        <span id="total-documents">0</span>
+                                    </div>
+                                    <div class="summary-item">
+                                        <span>Translated:</span>
+                                        <span class="success" id="translated-docs">0</span>
+                                    </div>
+                                    <div class="summary-item">
+                                        <span>Approved:</span>
+                                        <span class="info" id="reviewed-docs">0</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="document-list" id="documentList">
+                                <!-- Document list will be populated here -->
+                            </div>
+
+                            <div class="translation-actions">
+                                <button class="btn-approve-all" id="approveAllBtn">
+                                    <i class="fas fa-check-double"></i> Approve All Translations
+                                </button>
+                                <button class="btn-proceed-processing" id="proceedProcessingBtn" disabled>
+                                    <i class="fas fa-arrow-right"></i> Proceed to AI Processing
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Document Comparison View -->
+                        <div class="document-comparison">
+                            <div class="comparison-header">
+                                <h3 id="currentDocumentTitle">Select a document to review</h3>
+                                <div class="comparison-controls">
+                                    <button class="btn-toggle-view" id="toggleViewBtn">
+                                        <i class="fas fa-columns"></i> Side by Side
+                                    </button>
+                                    <button class="btn-approve-doc" id="approveDocBtn" disabled>
+                                        <i class="fas fa-check"></i> Approve Translation
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div class="document-viewers">
+                                <div class="document-viewer original-viewer">
+                                    <div class="viewer-header">
+                                        <h4><i class="fas fa-file"></i> Original Document</h4>
+                                        <span class="language-badge" id="originalLanguage">Detected: Spanish</span>
+                                    </div>
+                                    <div class="viewer-content">
+                                        <div class="document-placeholder" id="originalDocViewer">
+                                            <i class="fas fa-file-alt"></i>
+                                            <h4>Original Document</h4>
+                                            <p>Select a document from the list to view the original version here.</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="document-viewer translated-viewer">
+                                    <div class="viewer-header">
+                                        <h4><i class="fas fa-language"></i> English Translation</h4>
+                                        <span class="quality-badge" id="translationQualityBadge">Quality: 96.7%</span>
+                                    </div>
+                                    <div class="viewer-content">
+                                        <div class="document-placeholder" id="translatedDocViewer">
+                                            <i class="fas fa-file-alt"></i>
+                                            <h4>English Translation</h4>
+                                            <p>The translated version will appear here for side-by-side comparison.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Stage 6: Results Dashboard with Integrated Processing -->
+            <div class="stage-content" id="stage-6">
+                <!-- Processing Notification Popup -->
+                <div class="processing-popup" id="processingPopup" style="display: none;">
+                    <div class="popup-header">
+                        <div class="popup-icon">
+                            <i class="fas fa-cog fa-spin"></i>
+                        </div>
+                        <div class="popup-content">
+                            <h4>AI Processing in Progress</h4>
+                            <p id="popupProcessingText">Processing medical documents...</p>
+                        </div>
+                        <button class="popup-toggle" id="popupToggle">
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                    </div>
+                    <div class="popup-details" id="popupDetails">
+                        <div class="popup-progress">
+                            <div class="progress-bar-small">
+                                <div class="progress-fill-small" id="progressFillSmall"></div>
+                            </div>
+                            <div class="progress-info">
+                                <span id="popupProgressText">Initializing...</span>
+                                <span id="popupProgressTime">78s remaining</span>
+                            </div>
+                        </div>
+                        <div class="popup-stages" id="popupStages">
+                            <div class="popup-stage" data-stage="parsing">
+                                <i class="fas fa-file-text"></i> Document Parsing
+                            </div>
+                            <div class="popup-stage" data-stage="critical">
+                                <i class="fas fa-exclamation-triangle"></i> Critical Fields Analysis
+                            </div>
+                            <div class="popup-stage" data-stage="specialized">
+                                <i class="fas fa-lungs"></i> Specialized Analysis
+                            </div>
+                            <div class="popup-stage" data-stage="integration">
+                                <i class="fas fa-puzzle-piece"></i> Data Integration
+                            </div>
+                            <div class="popup-stage" data-stage="validation">
+                                <i class="fas fa-check-circle"></i> Quality Validation
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Processing Status Header (Hidden Initially) -->
+                <div class="processing-header" id="processingHeader" style="display: none;">
+                    <div class="stage-header">
+                        <h2><i class="fas fa-cog fa-spin"></i> AI Processing in Progress</h2>
+                        <p id="processingPatient">Processing Patient NEC-2024-001</p>
+                    </div>
+
+                    <div class="processing-section">
+                        <div class="progress-container">
+                            <div class="progress-bar">
+                                <div class="progress-fill" id="progressFill"></div>
+                            </div>
+                            <div class="progress-text" id="progressText">Initializing AI processing...</div>
+                            <div class="progress-time" id="progressTime">Estimated time: Calculating...</div>
+                        </div>
+
+                        <div class="processing-stages" id="processingStages">
+                            <div class="processing-stage" data-stage="parsing">
+                                <div class="stage-icon"><i class="fas fa-file-text"></i></div>
+                                <div class="stage-info">
+                                    <h4>Document Parsing</h4>
+                                    <p>Analyzing clinical content structure</p>
+                                </div>
+                                <div class="stage-status"><i class="fas fa-clock"></i></div>
+                            </div>
+                            
+                            <div class="processing-stage" data-stage="critical">
+                                <div class="stage-icon"><i class="fas fa-exclamation-triangle"></i></div>
+                                <div class="stage-info">
+                                    <h4>Critical Fields Analysis</h4>
+                                    <p>Extracting antibiotics, probiotics, feeding data</p>
+                                </div>
+                                <div class="stage-status"><i class="fas fa-clock"></i></div>
+                            </div>
+                            
+                            <div class="processing-stage" data-stage="specialized">
+                                <div class="stage-icon"><i class="fas fa-lungs"></i></div>
+                                <div class="stage-info">
+                                    <h4>Specialized Analysis</h4>
+                                    <p>Respiratory support, surgical interventions</p>
+                                </div>
+                                <div class="stage-status"><i class="fas fa-clock"></i></div>
+                            </div>
+                            
+                            <div class="processing-stage" data-stage="integration">
+                                <div class="stage-icon"><i class="fas fa-puzzle-piece"></i></div>
+                                <div class="stage-info">
+                                    <h4>Data Integration</h4>
+                                    <p>Combining results and resolving conflicts</p>
+                                </div>
+                                <div class="stage-status"><i class="fas fa-clock"></i></div>
+                            </div>
+                            
+                            <div class="processing-stage" data-stage="validation">
+                                <div class="stage-icon"><i class="fas fa-check-circle"></i></div>
+                                <div class="stage-info">
+                                    <h4>Quality Validation</h4>
+                                    <p>Confidence scoring and final checks</p>
+                                </div>
+                                <div class="stage-status"><i class="fas fa-clock"></i></div>
+                            </div>
+                        </div>
+
+                        <div class="completion-message" id="completionMessage">
+                            <div class="completion-icon">
+                                <i class="fas fa-check-circle"></i>
+                            </div>
+                            <h3>Processing Complete!</h3>
+                            <p>All clinical data has been successfully extracted and validated.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Results Dashboard Content -->
+                <div class="results-dashboard" id="resultsDashboard">
+                    <div class="stage-header">
+                        <div class="header-content">
+                            <div class="header-text">
+                                <h2>Results Dashboard</h2>
+                                <p>Review and validate extracted medical data</p>
+                            </div>
+                            <button class="btn-back-portal" id="backPortalBtn">
+                                <i class="fas fa-home"></i> Return to Portal
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="results-container">
+                        <div class="results-navigation">
+                            <div class="processing-summary">
+                                <h4>Processing Summary</h4>
+                                <div class="summary-grid">
+                                    <div class="summary-item">
+                                        <span>Total Fields:</span>
+                                        <span id="total-fields">0</span>
+                                    </div>
+                                    <div class="summary-item">
+                                        <span>High Confidence:</span>
+                                        <span class="success" id="high-confidence-summary">0</span>
+                                    </div>
+                                    <div class="summary-item">
+                                        <span>To Be Checked:</span>
+                                        <span class="warning" id="double-check-summary">0</span>
+                                    </div>
+                                    <div class="summary-item">
+                                        <span>Manual Input:</span>
+                                        <span class="info" id="manual-input-summary">0</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="nav-tabs">
+                                <div class="nav-tab active" data-section="manual-input">
+                                    <div class="nav-tab-content">
+                                        <h4>Manual Input Required</h4>
+                                        <p>Group 4 - Start here first</p>
+                                        <span class="field-count" id="manual-input-count">0/0</span>
+                                    </div>
+                                </div>
+                                <div class="nav-tab" data-section="high-confidence">
+                                    <div class="nav-tab-content">
+                                        <h4>High-Confidence Extractions</h4>
+                                        <p>Groups 1 & 3 - Verified fields</p>
+                                        <span class="field-count" id="high-confidence-count">0/0</span>
+                                    </div>
+                                </div>
+                                <div class="nav-tab" data-section="double-check">
+                                    <div class="nav-tab-content">
+                                        <h4>To Be Double Checked</h4>
+                                        <p>Groups 2 & 5 - AI predictions</p>
+                                        <span class="field-count" id="double-check-count">0/0</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="results-main">
+                            <div class="results-section active" id="manual-input">
+                                <div class="section-header">
+                                    <div class="section-title-group">
+                                        <h3>Manual Input Required</h3>
+                                        <p>Group 4 fields requiring human review and input - Available immediately</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="field-grid" id="manual-input-fields">
+                                    <!-- Fields will be loaded dynamically -->
+                                </div>
+                            </div>
+
+                            <div class="results-section" id="high-confidence">
+                                <div class="section-header">
+                                    <div class="section-title-group">
+                                        <h3>High-Confidence Extractions</h3>
+                                        <p>Fields from Groups 1 & 3 with verified accuracy</p>
+                                    </div>
+                                    <button class="btn-accept-all" data-section="high-confidence">
+                                        <i class="fas fa-check-double"></i> Accept All
+                                    </button>
+                                </div>
+                                
+                                <div class="field-grid" id="high-confidence-fields">
+                                    <!-- Fields will be loaded dynamically -->
+                                </div>
+                            </div>
+
+                            <div class="results-section" id="double-check">
+                                <div class="section-header">
+                                    <div class="section-title-group">
+                                        <h3>To Be Double Checked</h3>
+                                        <p>AI predictions from Groups 2 & 5 requiring verification</p>
+                                    </div>
+                                    <button class="btn-accept-all" data-section="double-check">
+                                        <i class="fas fa-check-double"></i> Accept All
+                                    </button>
+                                </div>
+                                
+                                <div class="field-grid" id="double-check-fields">
+                                    <!-- Fields will be loaded dynamically -->
+                                </div>
+                            </div>
+
+
+                        </div>
+
+                        <!-- PDF Review Panel Overlay -->
+                        <div class="pdf-overlay" id="pdfOverlay" style="display: none;"></div>
+
+                        <!-- PDF Review Panel -->
+                        <div class="pdf-review-panel" id="pdfReviewPanel">
+                            <div class="pdf-header">
+                                <h3><i class="fas fa-file-pdf"></i> Document Review</h3>
+                                <button class="pdf-close">
+                                    <i class="fas fa-times"></i>
+                                </button>
+                            </div>
+                            <div class="pdf-info">
+                                <span class="pdf-title">Loading document...</span>
+                            </div>
+                            <div class="pdf-viewer">
+                                <div class="pdf-placeholder">
+                                    <i class="fas fa-file-pdf"></i>
+                                    <h4>PDF Viewer</h4>
+                                    <p>In a real implementation, this would display the actual PDF document from your uploaded medical files for review and validation.</p>
+                                    <div class="pdf-controls">
+                                        <button class="pdf-control-btn">
+                                            <i class="fas fa-search-minus"></i> Zoom Out
+                                        </button>
+                                        <button class="pdf-control-btn">
+                                            <i class="fas fa-search-plus"></i> Zoom In
+                                        </button>
+                                        <button class="pdf-control-btn">
+                                            <i class="fas fa-download"></i> Download
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Fixed Delivery Notification -->
+                <div class="delivery-notification" id="deliveryNotification" style="display: none;">
+                    <div class="delivery-notification-content">
+                        <div class="delivery-notification-icon">
+                            <i class="fas fa-check-circle"></i>
+                        </div>
+                        <div class="delivery-notification-text">
+                            <h4>All Fields Validated!</h4>
+                            <p>Ready to deliver patient data to the research database</p>
+                        </div>
+                        <button class="btn-delivery-fixed" id="btnDeliveryFixed">
+                            <i class="fas fa-paper-plane"></i> Deliver Patient Data
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Warning Modal -->
+        <div class="modal-overlay" id="warningModal" style="display: none;">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3><i class="fas fa-exclamation-triangle"></i> Leave without saving progress?</h3>
+                </div>
+                <div class="modal-body">
+                    <p>You have unsaved changes. What would you like to do?</p>
+                </div>
+                <div class="modal-actions">
+                    <button class="btn-save-progress">
+                        <i class="fas fa-save"></i> Save Progress
+                    </button>
+                    <button class="btn-discard-all">
+                        <i class="fas fa-trash"></i> Discard All Changes
+                    </button>
+                    <button class="btn-cancel">
+                        <i class="fas fa-arrow-left"></i> Continue Working
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Core JavaScript Files -->
+    <script src="js/app.js"></script>
+    <script src="js/stage_manager.js"></script>
+    <script src="js/utils.js"></script>
+    
+    <!-- Feature Modules -->
+    <script src="js/authentication.js"></script>
+    <script src="js/user_portal.js"></script>
+    <script src="js/patient_database.js"></script>
+    <script src="js/document_management.js"></script>
+    <script src="js/translation.js"></script>
+    <script src="js/ai_processing.js"></script>
+    <script src="js/results_dashboard.js"></script>
+    <script src="js/field_manager.js"></script>
+    <script src="js/notifications.js"></script>
+</body>
+</html>

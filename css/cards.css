@@ -1,0 +1,432 @@
+/* Card Components */
+
+/* Welcome Card */
+.welcome-card {
+    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+    color: var(--white);
+    border-radius: var(--radius-lg);
+    padding: 40px;
+    box-shadow: var(--shadow-xl);
+}
+
+.welcome-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
+}
+
+/* User Info Components */
+.user-info {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex: 1;
+}
+
+.user-avatar {
+    width: 80px;
+    height: 80px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    color: var(--white);
+    border: 3px solid rgba(255, 255, 255, 0.3);
+}
+
+.user-details h3 {
+    font-size: 1.8rem;
+    margin: 0 0 5px 0;
+    color: var(--white);
+}
+
+.user-role {
+    color: var(--color-light);
+    font-size: 1.1rem;
+    margin: 0 0 5px 0;
+    font-weight: 500;
+}
+
+.last-login {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.9rem;
+    margin: 0;
+}
+
+/* Quick Stats */
+.quick-stats {
+    display: flex;
+    gap: 30px;
+}
+
+.quick-stats .stat-item {
+    text-align: center;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: var(--radius);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    min-width: 120px;
+}
+
+.quick-stats .stat-number {
+    display: block;
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--white);
+    margin-bottom: 5px;
+}
+
+.quick-stats .stat-label {
+    color: var(--color-light);
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+/* Action Cards */
+.action-card {
+    background: var(--white);
+    border-radius: var(--radius-lg);
+    padding: 40px;
+    box-shadow: var(--shadow);
+    border: 2px solid var(--gray-200);
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+}
+
+.action-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-xl);
+}
+
+.action-card.primary-action {
+    border-color: var(--primary);
+    background: linear-gradient(135deg, var(--white) 0%, var(--gray-50) 100%);
+    cursor: pointer;
+}
+
+.action-card.primary-action:hover {
+    border-color: var(--primary-dark);
+    background: linear-gradient(135deg, var(--gray-50) 0%, var(--color-light) 100%);
+}
+
+.action-card.secondary-action {
+    border-color: var(--gray-300);
+    cursor: pointer;
+}
+
+.action-card.secondary-action:hover {
+    border-color: var(--gray-400);
+}
+
+.action-icon {
+    width: 80px;
+    height: 80px;
+    background: var(--primary);
+    color: var(--white);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    margin-bottom: 25px;
+    transition: all 0.3s ease;
+}
+
+.action-card.secondary-action .action-icon {
+    background: var(--gray-400);
+}
+
+.action-card:hover .action-icon {
+    transform: scale(1.1);
+}
+
+.action-content {
+    flex: 1;
+    margin-bottom: 25px;
+}
+
+.action-content h3 {
+    color: var(--gray-700);
+    font-size: 1.5rem;
+    margin: 0 0 15px 0;
+    font-weight: 600;
+}
+
+.action-content p {
+    color: var(--gray-500);
+    margin: 0 0 20px 0;
+    line-height: 1.6;
+}
+
+.action-features {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.action-features span {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--gray-600);
+    font-size: 0.9rem;
+}
+
+.action-features i {
+    color: var(--success);
+    font-size: 0.8rem;
+}
+
+/* Activity Card */
+.activity-card {
+    background: var(--white);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow);
+    padding: 30px;
+    border: 1px solid var(--gray-200);
+}
+
+.activity-card h3 {
+    color: var(--gray-700);
+    font-size: 1.3rem;
+    margin: 0 0 25px 0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.activity-card i {
+    color: var(--primary);
+}
+
+.activity-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.activity-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    padding: 20px;
+    background: var(--gray-50);
+    border-radius: var(--radius);
+    border-left: 4px solid var(--gray-300);
+    transition: all 0.3s ease;
+}
+
+.activity-item:hover {
+    background: var(--white);
+    border-left-color: var(--primary);
+    transform: translateX(5px);
+}
+
+.activity-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    color: var(--white);
+    flex-shrink: 0;
+}
+
+.activity-icon.completed {
+    background: var(--success);
+}
+
+.activity-icon.pending {
+    background: var(--warning);
+}
+
+.activity-content {
+    flex: 1;
+}
+
+.activity-content h4 {
+    color: var(--gray-700);
+    font-size: 1rem;
+    margin: 0 0 5px 0;
+    font-weight: 600;
+}
+
+.activity-content p {
+    color: var(--gray-500);
+    font-size: 0.9rem;
+    margin: 0;
+    line-height: 1.4;
+}
+
+/* Field Cards */
+.field-card {
+    background: var(--white);
+    border: 1px solid var(--gray-200);
+    border-radius: var(--radius);
+    padding: 20px;
+    transition: all 0.3s ease;
+}
+
+.field-card.pending {
+    border-left: 4px solid var(--warning);
+    background: #FFF9E6;
+}
+
+.field-card.accepted {
+    border-left: 4px solid var(--success);
+    background: #F0FDF4;
+}
+
+.field-card:hover {
+    border-color: var(--primary);
+    box-shadow: var(--shadow);
+}
+
+.field-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 15px;
+}
+
+.field-name-container {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex: 1;
+}
+
+.field-badges {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+}
+
+.field-name {
+    font-weight: 600;
+    color: var(--gray-700);
+    font-size: 0.9rem;
+    line-height: 1.3;
+}
+
+.field-value {
+    background: var(--gray-50);
+    padding: 12px;
+    border-radius: var(--radius);
+    font-family: monospace;
+    font-size: 0.9rem;
+    margin-bottom: 15px;
+    color: var(--gray-700);
+}
+
+.field-actions {
+    display: flex;
+    gap: 8px;
+}
+
+/* Info Icon and Tooltip */
+.info-icon {
+    width: 20px;
+    height: 20px;
+    background: var(--gray-400);
+    color: var(--white);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.75rem;
+    cursor: help;
+    transition: all 0.3s ease;
+    position: relative;
+    flex-shrink: 0;
+}
+
+.info-icon:hover {
+    background: var(--primary);
+    transform: scale(1.15);
+}
+
+.tooltip {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--gray-800);
+    color: var(--white);
+    padding: 12px 16px;
+    border-radius: var(--radius-lg);
+    font-size: 0.9rem;
+    white-space: nowrap;
+    max-width: 400px;
+    white-space: normal;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    box-shadow: var(--shadow-xl);
+    line-height: 1.5;
+    min-width: 250px;
+    text-align: left;
+    font-weight: 500;
+}
+
+.tooltip::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border: 8px solid transparent;
+    border-top-color: var(--gray-800);
+}
+
+.info-icon:hover .tooltip {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Confidence and Status Badges */
+.confidence-badge {
+    padding: 4px 8px;
+    border-radius: 12px;
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+.confidence-badge.high {
+    background: var(--success);
+    color: var(--white);
+}
+
+.confidence-badge.medium {
+    background: var(--warning);
+    color: var(--white);
+}
+
+.language-badge,
+.quality-badge {
+    padding: 4px 10px;
+    border-radius: 12px;
+    font-size: 0.75rem;
+    font-weight: 500;
+}
+
+.language-badge {
+    background: var(--warning);
+    color: var(--white);
+}
+
+.quality-badge {
+    background: var(--success);
+    color: var(--white);
+}

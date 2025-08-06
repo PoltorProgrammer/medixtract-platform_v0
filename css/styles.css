@@ -1,0 +1,27 @@
+/* Main CSS File - MediXtract Application */
+
+/* Foundation Files */
+@import "variables.css";
+@import "reset.css";
+@import "layout.css";
+
+/* Component Files */
+@import "buttons.css";
+@import "forms.css";
+@import "cards.css";
+@import "tables.css";
+@import "modals.css";
+@import "notifications.css";
+@import "progress.css";
+
+/* Feature-Specific Files */
+@import "authentication.css";
+@import "user_portal.css";
+@import "patient_database.css";
+@import "document_management.css";
+@import "translation.css";
+@import "processing.css";
+@import "results_dashboard.css";
+
+/* Responsive Design */
+@import "responsive.css";

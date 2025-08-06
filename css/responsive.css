@@ -1,0 +1,248 @@
+/* Responsive Design */
+
+@media (max-width: 768px) {
+    .main-content {
+        padding: 20px;
+    }
+
+    /* Authentication Responsive */
+    .auth-container {
+        flex-direction: column;
+    }
+
+    .auth-left,
+    .auth-right {
+        padding: 40px 30px;
+    }
+
+    /* Patient Database Responsive */
+    .database-controls {
+        flex-direction: column;
+        gap: 20px;
+        align-items: stretch;
+    }
+
+    .search-filters {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .filter-group {
+        min-width: auto;
+    }
+
+    .results-header {
+        flex-direction: column;
+        gap: 15px;
+        align-items: flex-start;
+    }
+
+    .table-header,
+    .table-row {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
+    .header-cell,
+    .table-cell {
+        padding: 12px 15px;
+        text-align: left;
+        border-bottom: 1px solid var(--gray-200);
+    }
+
+    .header-cell:before,
+    .table-cell:before {
+        content: attr(data-label);
+        font-weight: 600;
+        color: var(--gray-500);
+        font-size: 0.8rem;
+        display: block;
+        margin-bottom: 5px;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+    }
+
+    .table-row {
+        background: var(--white);
+        border: 1px solid var(--gray-200);
+        border-radius: var(--radius);
+        margin-bottom: 15px;
+        box-shadow: var(--shadow-sm);
+    }
+
+    .table-row:hover {
+        box-shadow: var(--shadow);
+    }
+
+    .action-buttons {
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    /* User Portal Responsive */
+    .welcome-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 25px;
+    }
+
+    .user-info {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .quick-stats {
+        flex-direction: column;
+        gap: 15px;
+        width: 100%;
+    }
+
+    .quick-stats .stat-item {
+        min-width: auto;
+    }
+
+    .main-actions {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .secondary-actions {
+        flex-wrap: wrap;
+        gap: 20px;
+        justify-content: center;
+    }
+
+    .secondary-action-item {
+        min-width: 120px;
+    }
+
+    /* Document Management Responsive */
+    .folder-contents {
+        grid-template-columns: 1fr;
+    }
+    
+    .summary-stats {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    /* Results Dashboard Responsive */
+    .nav-tabs {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .nav-tab {
+        min-width: auto;
+        width: 100%;
+    }
+
+    .summary-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+
+    .translation-summary-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px;
+    }
+
+    .translation-summary-grid .summary-item {
+        min-height: 60px;
+        padding: 10px 6px;
+    }
+
+    .translation-summary-grid .summary-item span:first-child {
+        font-size: 0.7rem;
+    }
+
+    .translation-summary-grid .summary-item span:last-child {
+        font-size: 1.1rem;
+    }
+
+    .field-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .processing-stages {
+        grid-template-columns: 1fr;
+    }
+
+    .section-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+
+    /* Translation Review Responsive */
+    .translation-container {
+        flex-direction: column;
+    }
+
+    .document-navigation {
+        width: 100%;
+        border-right: none;
+        border-bottom: 1px solid var(--gray-200);
+    }
+
+    .document-viewers {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .document-viewer {
+        border-right: none;
+        border-bottom: 1px solid var(--gray-200);
+        min-height: 300px;
+    }
+
+    .document-viewer:last-child {
+        border-bottom: none;
+    }
+
+    /* Fixed Delivery Notification Responsive */
+    .delivery-notification {
+        bottom: 10px;
+        width: calc(100% - 20px);
+        max-width: none;
+    }
+
+    .delivery-notification-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 15px;
+        padding: 20px;
+    }
+
+    .delivery-notification-text {
+        order: 1;
+    }
+
+    .btn-delivery-fixed {
+        order: 2;
+        width: 100%;
+        justify-content: center;
+    }
+
+    /* PDF Review Panel Responsive */
+    .pdf-review-panel {
+        width: 100%;
+        right: -100%;
+    }
+
+    .pdf-controls {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    /* Translation Summary Mobile */
+    .translation-summary-grid {
+        grid-template-columns: 1fr !important;
+        gap: 8px !important;
+    }
+
+    .translation-summary-grid .summary-item {
+        min-height: 50px !important;
+        padding: 8px !important;
+    }
+}

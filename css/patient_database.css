@@ -1,0 +1,66 @@
+/* Patient Database Styles */
+
+.database-controls {
+    background: var(--gray-50);
+    border-bottom: 1px solid var(--gray-200);
+    padding: 20px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 30px;
+}
+
+.controls-left {
+    flex-shrink: 0;
+}
+
+.controls-center {
+    flex: 1;
+}
+
+.search-filters {
+    display: flex;
+    gap: 20px;
+    align-items: flex-end;
+}
+
+.controls-right {
+    flex-shrink: 0;
+}
+
+.database-results {
+    padding: 30px;
+}
+
+.results-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid var(--gray-200);
+}
+
+.results-header h3 {
+    color: var(--gray-700);
+    font-size: 1.4rem;
+    margin: 0;
+}
+
+.results-count {
+    color: var(--gray-500);
+    font-weight: normal;
+    font-size: 1rem;
+}
+
+.sort-controls {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.sort-controls label {
+    color: var(--gray-600);
+    font-size: 0.9rem;
+    font-weight: 500;
+}

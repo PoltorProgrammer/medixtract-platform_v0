@@ -1,0 +1,41 @@
+/* Processing Stage Styles */
+
+.processing-header {
+    background: var(--white);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow);
+    padding: 30px;
+    margin-bottom: 30px;
+    transition: all 0.5s ease;
+}
+
+.processing-header.completed {
+    background: var(--gray-50);
+    border: 2px solid var(--success);
+}
+
+.processing-header.hidden {
+    opacity: 0;
+    transform: translateY(-20px);
+    height: 0;
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+}
+
+.processing-section {
+    background: var(--white);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow);
+    padding: 40px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.results-dashboard {
+    transition: all 0.3s ease;
+}
+
+.results-dashboard.processing-active {
+    margin-top: 0;
+}

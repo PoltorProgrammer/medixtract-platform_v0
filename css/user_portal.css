@@ -1,0 +1,64 @@
+/* User Portal Styles */
+
+/* Welcome Section */
+.welcome-section {
+    width: 100%;
+}
+
+/* Actions Section */
+.actions-section {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.main-actions {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 30px;
+}
+
+/* Secondary Actions */
+.secondary-actions {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    padding: 25px;
+    background: var(--gray-50);
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--gray-200);
+}
+
+.secondary-action-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    padding: 15px 20px;
+    border-radius: var(--radius);
+    transition: all 0.3s ease;
+    color: var(--gray-500);
+}
+
+.secondary-action-item:hover {
+    background: var(--white);
+    color: var(--primary);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow);
+}
+
+.secondary-action-item i {
+    font-size: 1.5rem;
+}
+
+.secondary-action-item span {
+    font-size: 0.9rem;
+    font-weight: 500;
+    text-align: center;
+}
+
+/* Activity Section */
+.activity-section {
+    width: 100%;
+}
